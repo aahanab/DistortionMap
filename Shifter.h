@@ -1,4 +1,12 @@
 //Shifter code
+#ifndef SHIFTER_H
+#define SHIFTER_H
+
+class TFile;
+class TVector3;
+class TString;
+class TH3F;
+
 class Shifter {
 public:
   Shifter(TString truthfilename, TString correctionfilename);
@@ -10,3 +18,4 @@ public:
   TH3F *hX, *hY, *hZ, *hR, *hPhi, *hXave, *hYave, *hZave, *hRave, *hPhiave, *hXBack, *hYBack, *hZBack;  
 };
 
+#endif
