@@ -56,8 +56,8 @@ Shifter::Shifter(TString truthfilename, TString correctionfilename){
 
 TVector3 Shifter::ShiftForward(TVector3 position){
 double x, y, z, xshift, yshift, zshift;
-  const double mm = 1.0;
-  const double cm = 10.0;
+  //const double mm = 1.0;
+  //const double cm = 10.0;
   TVector3 shiftposition;
 
   x= position.X();
@@ -98,9 +98,9 @@ double x, y, z, xshift, yshift, zshift;
 }
 
 TVector3 Shifter::ShiftBack(TVector3 forwardshift){
-double x, y, z, xshift, yshift, zshift;
-  const double mm = 1.0;
-  const double cm = 10.0;
+double x, y, z;
+ // const double mm = 1.0;
+  //const double cm = 10.0;
   TVector3 shiftposition;
 
   x= forwardshift.X();
