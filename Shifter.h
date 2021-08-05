@@ -2,9 +2,10 @@
 #ifndef SHIFTER_H
 #define SHIFTER_H
 
+#include <TString.h>
+
 class TFile;
 class TVector3;
-class TString;
 class TH3F;
 
 class Shifter {
