@@ -9,7 +9,7 @@ class TH3F;
 
 class Shifter {
 public:
-  Shifter(TString truthfilename) :Shifter(truthfilename, "" ){return;}
+  Shifter(TString truthfilename) :Shifter(truthfilename, "" ){return;} ;
   Shifter(TString truthfilename, TString correctionfilename);
   
   TVector3 Shift(TVector3 position);
