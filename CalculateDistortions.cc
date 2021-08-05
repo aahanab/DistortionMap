@@ -461,7 +461,7 @@ int CalculateDistortions::process_event(PHCompositeNode *topNode)
   _h_hits->Fill(n_hits);
   return 0;
   
-  _h_SC_ibf -> Project3D('xz') -> Draw("colz");
+  _h_SC_ibf -> Project3D("xz") -> Draw("colz");
   
 }
 
