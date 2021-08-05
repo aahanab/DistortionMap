@@ -5,7 +5,7 @@
 #include <TString.h>
 
 
-Shifter::Shifter(TString truthfilename, TString correctionfilename=""){
+Shifter::Shifter(TString truthfilename, TString correctionfilename){
   //load a 'truth' distortion map and, optionally, a map of a measured correction to those distortions
   //this code is currently set up to load a particular correction map that doesn't have distortions
   // in X,Y, and Z components, but rather only in R, R*Phi, and Z components.
