@@ -289,7 +289,7 @@ int CalculateDistortions::process_event(PHCompositeNode *topNode)
 
         //Reading IBF and Gain weights according to X-Y position
         
-        TVector3 oldPos(phi,r,z); 
+        TVector3 oldPos(x/cm,y/cm,z/cm); 
         Shifter s("/sphenix/user/rcorliss/distortion_maps/2021.04/apr07.average.real_B1.4_E-400.0.ross_phi1_sphenix_phislice_lookup_r26xp40xz40.distortion_map.hist.root"); 
         TVector3 newPos;    
         newPos= s.ShiftForward(oldPos);
@@ -370,7 +370,7 @@ int CalculateDistortions::process_event(PHCompositeNode *topNode)
           }
           //if(/*_isOnPlane &&*/ f_fill_ibf[iz]==1){
           if( f_fill_ibf[iz]==1){
-            _h_SC_ibf[iz] ->Fill(newPos.Phi(),newPos.Perp(),z_ibf[iz],_ibf_vol);
+            _h_SC_ibf[iz] ->Fill(newPos.Phi(),newPos.Perp()*cm,z_ibf[iz],_ibf_vol);
           }
         }
         if( f_fill_ibf[0]==1){
