@@ -294,7 +294,7 @@ int CalculateDistortions::process_event(PHCompositeNode *topNode)
         TVector3 oldPos(x/cm,y/cm,z/cm); 
         
         TVector3 newPos;
-        cout << x << "," << y << "," << z << endl;
+        cout << oldPos.x() << "," << oldPos.y() << "," << oldPos.z() << endl;
         newPos= s.ShiftForward(oldPos);
        //   double rforward=forwardshift.Perp();         
      //  double phiforward=forwardshift.Phi();          
