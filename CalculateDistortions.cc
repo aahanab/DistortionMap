@@ -244,6 +244,8 @@ int CalculateDistortions::InitRun(PHCompositeNode *topNode)
 //____________________________________________________________________________..
 int CalculateDistortions::process_event(PHCompositeNode *topNode)
 {
+  Shifter s("/sphenix/user/rcorliss/distortion_maps/2021.04/apr07.average.real_B1.4_E-400.0.ross_phi1_sphenix_phislice_lookup_r26xp40xz40.distortion_map.hist.root"); 
+  
   double bX = 0;
   double z_bias_avg = 0;
   int bemxingsInFile = _keys.size();
@@ -290,8 +292,9 @@ int CalculateDistortions::process_event(PHCompositeNode *topNode)
         //Reading IBF and Gain weights according to X-Y position
         
         TVector3 oldPos(x/cm,y/cm,z/cm); 
-        Shifter s("/sphenix/user/rcorliss/distortion_maps/2021.04/apr07.average.real_B1.4_E-400.0.ross_phi1_sphenix_phislice_lookup_r26xp40xz40.distortion_map.hist.root"); 
-        TVector3 newPos;    
+        
+        TVector3 newPos;
+        cout << x << "," << y << "," << z << endl;
         newPos= s.ShiftForward(oldPos);
        //   double rforward=forwardshift.Perp();         
      //  double phiforward=forwardshift.Phi();          
