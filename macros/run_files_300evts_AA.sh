@@ -3,7 +3,7 @@ start=${1?Error: no start file \# given}
 stop=${2?Error: no stop file \# given}
 bX=${3?Error: no beamX \# given}
 source /opt/sphenix/core/bin/sphenix_setup.sh -n
-export MYINSTALL=/sphenix/user/shulga/tpc2019_install
+export MYINSTALL=/sphenix/u/abrahma/install
 source /opt/sphenix/core/bin/setup_local.sh $MYINSTALL
  
 for (( f=$start; f<$stop; f++ ));
