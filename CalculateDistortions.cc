@@ -294,7 +294,7 @@ int CalculateDistortions::process_event(PHCompositeNode *topNode)
         TVector3 oldPos(x/cm,y/cm,z/cm); 
         
         TVector3 newPos;
-        cout << "In calculate Distortions these are the electron coordinates before Shifter;:  "
+        cout << "In calculate Distortions these are the electron coordinates before Shifter;:  " ;
         cout << oldPos.x() << "," << oldPos.y() << "," << oldPos.z() << endl;
         if (oldPos.z() < 0) { 
           oldPos.SetZ(abs(oldPos.z()));
