@@ -62,7 +62,7 @@ bool IsOverFrame(double r, double phi){
     return true;
   if (r>tpc_frame_r2_outer-tpc_margin  && r<tpc_frame_r3_inner+tpc_margin)
     return true;
-  if (r>tpc_frame_r3_outer-tpc_margin)
+  if (r>tpc_frame_r3_outer-tpc_margin) 
     return true;
 
   //if the coordinate is within gap+width of a sector boundary, return true:
@@ -294,6 +294,7 @@ int CalculateDistortions::process_event(PHCompositeNode *topNode)
         TVector3 oldPos(x/cm,y/cm,z/cm); 
         
         TVector3 newPos;
+        if (false) {
        // cout << "In calculate Distortions these are the electron coordinates before Shifter;:  " ;
       //  cout << oldPos.x() << "," << oldPos.y() << "," << oldPos.z() << endl;
         if (oldPos.z() < 0) { 
@@ -304,7 +305,12 @@ int CalculateDistortions::process_event(PHCompositeNode *topNode)
         else {
           newPos= s.ShiftForward(oldPos);
            }
-        
+          }
+        else {
+          newPos.SetZ(oldPos.Z());
+          newPos.SetX(oldPos.X());
+          newPos.SetY(oldPos.Y());
+        }
        //   double rforward=forwardshift.Perp();         
      //  double phiforward=forwardshift.Phi();          
    //   z= forwardshift.Z();                            
