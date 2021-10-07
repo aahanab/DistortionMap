@@ -37,7 +37,7 @@ introduction = [
     "",
     "# Used to give jobs a directory with respect to file input ",
     "# and output.",
-    "Initialdir      = /sphenix/u/abrahma/DistortionMap/",
+    "Initialdir      = /sphenix/data/data03/sphnxpro/user/aahanab",
     "",
     "# Input file given to the job.",
     "#Input           = /dev/null",
