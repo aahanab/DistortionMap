@@ -37,7 +37,7 @@ introduction = [
     "",
     "# Used to give jobs a directory with respect to file input ",
     "# and output.",
-    "Initialdir      = /sphenix/user/shulga/Work/IBF/DistortionMap/",
+    "Initialdir      = /sphenix/u/abrahma/DistortionMap/",
     "",
     "# Input file given to the job.",
     "#Input           = /dev/null",
@@ -58,12 +58,12 @@ evt_end = [17,24,32,40,48,56,64,72,80,88,96,100]
 evt_bX = [1508071.0, 3016509.0, 4524020.0, 6032112.0, 7540028.0, 9048092.0, 10556072.0, 12064371.0, 13572143.0, 15080178.0, 16588072.0, 18096105.0]
 for j, (start,end) in enumerate(zip(evt_start,evt_end)):
     for i in range(start,end):
-        filename = "./macros/run_files_300evts_AA_{}_{}.sh".format(j,i)
+        filename = "./run_macros/run_files_300evts_AA_{}_{}.sh".format(j,i)
         f= open(filename,"w+")
         f.write("#!/usr/bin/bash"+"\n")
         f.write("source macros/run_files_300evts_AA.sh {} {} {}".format(i,i+1,evt_bX[j])+"\n")
         f.close
-        filename_job = "./macros/condor_run_files_300evts_AA_{}_{}.job".format(j,i)
+        filename_job = "./run_macros/condor_run_files_300evts_AA_{}_{}.job".format(j,i)
         ff.write("condor_submit {}".format(filename_job)+"\n")
         f_job= open(filename_job,"w+")
         n_line = 0
@@ -71,20 +71,20 @@ for j, (start,end) in enumerate(zip(evt_start,evt_end)):
             f_job.write(lines+"\n")
             if n_line==3:
                 f_job.write("# The executable we want to run."+"\n")
-                f_job.write("Executable      = macros/run_files_300evts_AA_{}_{}.sh".format(j,i)+"\n")
+                f_job.write("Executable      = run_macros/run_files_300evts_AA_{}_{}.sh".format(j,i)+"\n")
                 f_job.write(""+"\n")
                 f_job.write(""+"\n")
                 f_job.write("# The argument to pass to the executable."+"\n")
                 f_job.write("Arguments       = \"run job 300 evts AA {} {}\"".format(j,i)+"\n")
             if n_line==38:
                 f_job.write("# The job's stdout is sent to this file."+"\n")
-                f_job.write("Output          = /sphenix/user/shulga/Work/IBF/DistortionMap/Out/myjob_300evts_AA_{}_{}.out".format(j,i)+"\n")
+                f_job.write("Output          = /sphenix/u/abrahma/DistortionMap/Out/myjob_300evts_AA_{}_{}.out".format(j,i)+"\n")
                 f_job.write(""+"\n")
                 f_job.write("# The job's stderr is sent to this file."+"\n")
-                f_job.write("Error           = /sphenix/user/shulga/Work/IBF/DistortionMap/Out/myjob_300evts_AA_{}_{}.err".format(j,i)+"\n")
+                f_job.write("Error           = /sphenix/u/abrahma/DistortionMap/Out/myjob_300evts_AA_{}_{}.err".format(j,i)+"\n")
                 f_job.write(""+"\n")
                 f_job.write("# The condor log file for this job, useful when debugging."+"\n")
-                f_job.write("Log             = /sphenix/user/shulga/Work/IBF/DistortionMap/Out/condor_300evts_AA_{}_{}.log".format(j,i)+"\n")
+                f_job.write("Log             = /sphenix/u/abrahma/DistortionMap/Out/condor_300evts_AA_{}_{}.log".format(j,i)+"\n")
                 f_job.write(""+"\n")
     
             n_line+=1
