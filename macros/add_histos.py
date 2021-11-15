@@ -22,7 +22,7 @@ for bX in bXs:
     #outputName = '/sphenix/user/shulga/Work/IBF/DistortionMap/Files/Summary_SC_W_hist_AA_event_10_bX{}.0.root'.format(bX)
     filePattern = dirName+name
     files = sorted(glob.glob(filePattern))
-    #print(files)
+    print(files)
     #n=0
     histos = []
     for n,file in enumerate(files):
