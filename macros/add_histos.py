@@ -31,6 +31,9 @@ for bX in bXs:
         if not f.IsOpen():
             print ("File did not open",file)
         if f.IsOpen():
+            test_hist = f.Get("asdfg")
+            print(test_hist)
+            return
             for h,h_name in enumerate(h_names):
                 newName=h_name+'_{}'.format(n)
                 if n==0:
