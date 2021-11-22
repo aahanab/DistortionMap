@@ -32,6 +32,7 @@ for bX in bXs:
             newName=h_name+'_{}'.format(n)
             if n==0:
                 newName=h_name
+                print(h_name)
             hist = f.Get(h_name).Clone(h_name)
             if n==0:
                 histos.append(hist)
