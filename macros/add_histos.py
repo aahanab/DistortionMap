@@ -39,11 +39,11 @@ for bX in bXs:
                 if n==0:
                     newName=h_name
                     print(h_name)
-                in_hist= None
+               # in_hist= None
                 in_hist = f.Get(h_name)
-                if in_hist is None:
+                if not in_hist:
                     print ("It did not find the h_name so could not draw histogram", h_name)
-                if not in_hist is None:
+                if in_hist:
                       hist = in_hist.Clone(h_name)
                         
                       if n==0:
