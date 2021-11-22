@@ -28,19 +28,28 @@ for bX in bXs:
     for n,file in enumerate(files):
         #h=0
         f = TFile.Open(file)
-        for h,h_name in enumerate(h_names):
-            newName=h_name+'_{}'.format(n)
-            if n==0:
-                newName=h_name
-                print(h_name)
-            hist = f.Get(h_name).Clone(h_name)
-            if n==0:
-                histos.append(hist)
-            if n>0:
-                histos[h].Add(hist) 
-            hist.SetDirectory(0)
-            #h+=1
-        #n+=1
+        if not f.IsOpen():
+            print ("File did not open",file)
+        if f.IsOpen():
+            for h,h_name in enumerate(h_names):
+                newName=h_name+'_{}'.format(n)
+                if n==0:
+                    newName=h_name
+                    print(h_name)
+                in_hist= None
+                in_hist = f.Get(h_name)
+                if not in_hist:
+                    print ("It did not find the h_name so could not draw histogram", h_name)
+                if in_hist:
+                      hist = in_hist.Clone(h_name)
+                        
+                      if n==0:
+                        histos.append(hist)
+                      if n>0:
+                        histos[h].Add(hist) 
+                        hist.SetDirectory(0)
+              #h+=1
+      #n+=1
 
     outfile = TFile(outputName, "RECREATE")
     for hist in histos:
