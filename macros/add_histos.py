@@ -38,9 +38,9 @@ for bX in bXs:
                     print(h_name)
                 in_hist= None
                 in_hist = f.Get(h_name)
-                if not in_hist:
+                if in_hist == None:
                     print ("It did not find the h_name so could not draw histogram", h_name)
-                if in_hist:
+                if in_hist!= None:
                       hist = in_hist.Clone(h_name)
                         
                       if n==0:
