@@ -50,7 +50,7 @@ for bX in bXs:
                         histos.append(hist)
                       if n>0:
                         histos[h].Add(hist) 
-                        hist.SetDirectory(0)
+                      hist.SetDirectory(0)
               #h+=1
       #n+=1
 
