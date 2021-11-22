@@ -31,8 +31,8 @@ for bX in bXs:
         if not f.IsOpen():
             print ("File did not open",file)
         if f.IsOpen():
-            test_hist = f.Get("asdfg")
-            print(test_hist)
+           # test_hist = f.Get("asdfg")
+           # print(test_hist)
             
             for h,h_name in enumerate(h_names):
                 newName=h_name+'_{}'.format(n)
@@ -41,9 +41,9 @@ for bX in bXs:
                     print(h_name)
                 in_hist= None
                 in_hist = f.Get(h_name)
-                if in_hist == None:
+                if in_hist is None:
                     print ("It did not find the h_name so could not draw histogram", h_name)
-                if in_hist!= None:
+                if not in_hist is None:
                       hist = in_hist.Clone(h_name)
                         
                       if n==0:
