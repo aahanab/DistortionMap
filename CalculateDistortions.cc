@@ -388,14 +388,18 @@ int CalculateDistortions::process_event(PHCompositeNode *topNode)
         }
         //if(n_hits<5)cout<<"z_bias_avg="<<z_bias_avg<<" IBF ="<<z_ibf<<" prim ="<<z_prim<<endl;
 
-        double w_prim = _hit_eion*Tpc_ElectronsPerGeV;
+        double w_prim = _hit_eion*Tpc_ElectronsPerGeV; 
         for(int iz=0;iz<10;iz++){
           if(f_fill_prim[iz]==1){
             _h_SC_prim[iz] ->Fill(_hit_phi,_hit_r,z_prim[iz],w_prim);
           }
           //if(/*_isOnPlane &&*/ f_fill_ibf[iz]==1){
           if( f_fill_ibf[iz]==1){
-            _h_SC_ibf[iz] ->Fill(newPos.Phi(),newPos.Perp()*cm,z_ibf[iz],_ibf_vol);
+            float temp_phi= phi;
+            if (temp_phi <0) {
+             temp_phi= temp_phi + 2*pi ;
+            }
+            _h_SC_ibf[iz] ->Fill(temp_phi,newPos.Perp()*cm,z_ibf[iz],_ibf_vol);
           }
         }
         if( f_fill_ibf[0]==1){
