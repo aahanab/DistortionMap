@@ -83,6 +83,7 @@ void Fun4All_FillChargesMap_300evts(  const int nEvents = 10, const int eventsIn
     //cout<<"bX="<<bXs[bXN]<<"last event:"<<n_bX<<" evt:"<<std::distance(bXs.begin(), it_bX)<<endl;
   }
   Fun4AllServer *se = Fun4AllServer::instance();
+  se->Verbosity (1000);
   string cd_name = "CalculateDistortions"+std::to_string(eventsInFileStart);
   //cout<<fname_tmp<<endl;
   CalculateDistortions *dist_calc = new CalculateDistortions(cd_name, foutputname);
@@ -112,6 +113,7 @@ void Fun4All_FillChargesMap_300evts(  const int nEvents = 10, const int eventsIn
     return;
   }
   cout << endl << "Running over " << nEvents << " Events" << endl;
+  se->Verbosity (1000);
   se->run(nEvents);
   //}
   cout << endl << "Calling End in Fun4All_CalculateDistortions.C" << endl;
