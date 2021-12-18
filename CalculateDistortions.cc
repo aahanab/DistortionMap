@@ -399,7 +399,7 @@ int CalculateDistortions::process_event(PHCompositeNode *topNode)
             if (temp_phi <0) {
              temp_phi= temp_phi + 2*pi ;
             }
-            _h_SC_ibf[iz] ->Fill(temp_phi,newPos.Perp()*cm,z_ibf[iz],_ibf_vol);
+            _h_SC_ibf[iz] ->Fill(_hit_phi,_hit_r,z_ibf[iz],_ibf_vol); //for now switching off the shifter code (first two are temp_phi, newPos.Perp()*cm)
           }
         }
         if( f_fill_ibf[0]==1){
