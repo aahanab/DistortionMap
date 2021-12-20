@@ -24,7 +24,7 @@ hist4->Project3D("y")->Draw("hist");
 c->cd(3);
 hist1->Project3D("y")->Draw("hist");
 hist2->SetLineColor(kRed);
-hist2->Project3D("y")->Draw("hist,same"); 
+hist2->Project3D("y2")->Draw("hist,same"); 
   
   
   }
