@@ -4,10 +4,10 @@ TFile *file2=TFile::Open("/sphenix/user/abrahma/Files_withshifterdec6/avg_ADCBin
 TH3F *hist1=(TH3F*)(file1->Get("_h_SC_ibf_8")); 
 TH3F *hist2=(TH3F*)(file2->Get("_h_SC_ibf_8"));
   
-TH3F *hist3=hist1->Clone("difference"); //make a new histogram that is a copy of hist1, give it a new name
+TH3F *hist3=(TH3F*)hist1->Clone("difference"); //make a new histogram that is a copy of hist1, give it a new name
 hist3->Add(hist2,-1); //subtract hist2 from this histogram by 'adding' hist2 multiplied by -1.
 
-TH3F *hist4=hist1->Clone("divide"); //make a new histogram that is a copy of hist1, give it a new name
+TH3F *hist4=(TH3F*)hist1->Clone("divide"); //make a new histogram that is a copy of hist1, give it a new name
 hist4->Divide(hist2); //divide each bin in the histogram by the same bin from hist2.
   
   
