@@ -16,15 +16,15 @@ TCanvas * c= new TCanvas("c","title bar", 1000, 600);
 c->Divide(3,1);
 
 c->cd(1);
-hist3->Project3D("x")->Draw("hist");
+hist3->Project3D("z")->Draw("hist");
   
 c->cd(2);
-hist4->Project3D("x")->Draw("hist");
+hist4->Project3D("z")->Draw("hist");
   
 c->cd(3);
-hist1->Project3D("x")->Draw("hist");
+hist1->Project3D("z")->Draw("hist");
 hist2->SetLineColor(kRed);
-hist2->Project3D("x2")->Draw("hist,same"); 
+hist2->Project3D("z2")->Draw("hist,same"); 
   
   
   }
