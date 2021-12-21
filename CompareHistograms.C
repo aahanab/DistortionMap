@@ -1,6 +1,6 @@
 void CompareHistograms () {
 TFile *file1=TFile::Open("/sphenix/user/abrahma/Files_withshifterdec6/avg_ADCBins_NoW_hist_G4Hits_sHijing_0-12fm_bX7540028.0_042000_043000.root","READ");
-TFile *file2=TFile::Open("/sphenix/user/abrahma/Files_withshifterdec6/avg_ADCBins_NoW_hist_G4Hits_sHijing_0-12fm_bX7540028.0_043000_044000.root","READ");  
+TFile *file2=TFile::Open("/sphenix/user/abrahma/Files/avg_ADCBins_NoW_hist_G4Hits_sHijing_0-12fm_bX7540028.0_042000_043000.root","READ");  
 TH3F *hist1=(TH3F*)(file1->Get("_h_SC_ibf_8")); 
 TH3F *hist2=(TH3F*)(file2->Get("_h_SC_ibf_8"));
   
